@@ -1,0 +1,8 @@
+---
+title: User Sign Up Flow
+---
+sequenceDiagram
+    actor Browser
+    participant Sign Up Service
+    participant User Service
+    participant Kafka

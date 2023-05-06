@@ -1,0 +1,52 @@
+flowchart TD
+   User["Premium Member
+   [Person]
+   
+   A user of the website who has\npurchased a subscription"]
+   
+   LS["Listings Service
+   [Software System]
+   
+   Serves web pages displaying title
+   listings to the end user"]
+   
+   User-- "Views titles, searches titles\nand reviews titles using" -->LS
+   
+flowchart TD
+   User["Premium Member
+   [Person]
+   
+   A user of the website who has
+   purchased a subscription"]
+   
+   LS["Listings Service
+   [Software System]
+   
+   Serves web pages displaying title
+   listings to the end user"]
+   
+   TS["Title Service
+   [Software System]
+   
+   Provides an API to retrieve
+   title information"]
+   
+   RS["Review Service
+   [Software System]
+   
+   Provides an API to retrieve
+   and submit reviews"]
+   
+   
+   SS["Search Service
+   [Software System]
+   
+   Provides an API to search
+   for titles"]
+   
+   
+   User-- "Views titles, searches titles\nand reviews titles using" -->LS
+   
+   LS-- "Retrieves title information from" -->TS
+   LS-- "Retrieves from and submits reviews to" -->RS
+   LS-- "Searches for titles using" -->SS

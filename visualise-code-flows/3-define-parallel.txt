@@ -1,0 +1,7 @@
+par
+    CreateUserService->>SendWelcomeEmailService: send_welcome_email
+    SendWelcomeEmailService-->>CreateUserService: boolean
+
+    CreateUserService->>Kafka: publish_user_created_event
+    Kafka-->>CreateUserService: boolean
+end

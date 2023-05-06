@@ -1,0 +1,27 @@
+erDiagram
+    TITLE {
+        int title_id
+        int type_id
+        string name
+        datetime release_date
+    }
+
+    TITLE_TYPE {
+        int type_id
+        string type
+    }
+
+    GENRE {
+        int genre_id PK
+        string name
+    }
+
+    TITLE_GENRE {
+        int title_id
+        int genre_id
+    }
+
+    TITLE }|--|| TITLE_TYPE: has
+    TITLE ||--o{ TITLE_GENRE: "belongs to"
+     
+    TITLE_GENRE }o--|| GENRE: references

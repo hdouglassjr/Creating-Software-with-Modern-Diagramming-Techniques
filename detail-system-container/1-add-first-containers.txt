@@ -1,0 +1,29 @@
+flowchart TD
+    User["Premium Member
+    [Person]
+    A user of the website who has
+    purchased a subscription"]
+
+    WA["Web Application
+    [.NET Core MVC Application]
+    Allows members to view and review titles
+    from a web browser. Also exposes
+    an API for the mobile app"]
+    
+    MA["Mobile Application
+    [Xamarin Application]
+    Allows members to view and review
+    titles from their mobile devices"]
+
+    User-- "Views titles, searches titles
+    and reviews titles using
+    [HTTPS]" -->WA
+
+    User-- "Views titles, searches titles
+    and reviews titles using
+    [HTTPS]" -->MA
+    
+    classDef container fill:#1168bd,stroke:#0b4884,color:#ffffff
+    classDef person fill:#08427b,stroke:#052e56,color:#ffffff
+    class User person
+    class WA,MA container

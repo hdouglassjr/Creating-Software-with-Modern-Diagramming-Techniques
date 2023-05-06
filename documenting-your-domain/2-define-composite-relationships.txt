@@ -1,0 +1,11 @@
+classDiagram
+    Title -- Genre
+    Title *-- Season
+    Title *-- Review
+    
+classDiagram
+    Title -- Genre
+    Title *-- Season
+    Title *-- Review
+
+    Season *-- Episode

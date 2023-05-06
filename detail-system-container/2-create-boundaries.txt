@@ -1,0 +1,46 @@
+flowchart TD
+    User["Premium Member
+    [Person]
+   
+    A user of the website who has
+    purchased a subscription"]
+   
+    WA["Web Application
+    [.NET Core MVC Application]
+   
+    Allows members to view and review titles
+    from a web browser. Also exposes
+    an API for the mobile app"]
+   
+    MA["Mobile Application
+    [Xamarin Application]
+   
+    Allows members to view and review
+    titles from their mobile devices"]
+   
+    R[("In-Memory Cache
+    [Redis]
+   
+    Titles and their reviews
+    are cached")]
+
+    User-- "Views titles, searches titles
+    and reviews titles using
+    [HTTPS]" -->WA
+
+    User-- "Views titles, searches titles
+    and reviews titles using
+    [HTTPS]" -->MA
+
+    subgraph listing-service[Listing Service]
+        MA-- "Makes API calls to\n[HTTPS]" -->WA
+
+        WA-- "Reads and writes to\n[REdis Serialization Protocol]" -->R
+    end
+
+    classDef container fill:#1168bd,stroke:#0b4884,color:#ffffff
+    classDef person fill:#08427b,stroke:#052e56,color:#ffffff
+    class User person
+    class WA,MA,R container
+    style listing-service fill:none,stroke:#CCC,stroke-width:2px
+    style listing-service color:#fff,stroke-dasharray: 5 5

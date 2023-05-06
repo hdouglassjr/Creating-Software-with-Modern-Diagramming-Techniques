@@ -1,0 +1,14 @@
+classDiagram
+    Title -- Genre
+    Title *-- Season
+    Title *-- Review
+    Title o-- Actor
+
+    TV Show --|> Title
+    Short --|> Title
+    Film --|> Title
+
+    Season *-- Review
+    Season *-- Episode
+
+    Episode *-- Review

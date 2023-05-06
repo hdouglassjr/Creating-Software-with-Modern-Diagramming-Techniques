@@ -1,0 +1,11 @@
+---
+title: User Sign Up Flow
+---
+sequenceDiagram    
+    actor Browser
+    participant Sign Up Service
+    participant User Service
+    participant Kafka
+    
+    Browser->>Sign Up Service: GET /sign_up
+    Sign Up Service-->>Browser: 200 OK (HTML page)

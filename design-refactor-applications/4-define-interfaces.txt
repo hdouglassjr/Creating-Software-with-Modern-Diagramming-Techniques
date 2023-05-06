@@ -1,0 +1,24 @@
+class UserController {
+    <<Class>>
+    -ICreateUserService _createUserService
+    +UserController(ICreateUserService createUserService)
+    +Create(string email, string username) User
+}
+
+class ICreateUserService {
+    <<Interface>>
+    +Call(CreateUserRequest createUserRequest) User
+}
+
+class CreateUserService {
+    <<Class>>
+    -UserModel _userModel
+    -SendWelcomeEmailService _sendWelcomeEmailService
+    -Kafka _kafka
+    +CreateUserService(UserModel um, SendWelcomeEmailService es, Kafka k)
+    +Call(CreateUserRequest createUserRequest) User
+    -CheckActiveUsers(List~User~ users) bool
+}
+
+UserController ..> ICreateUserService: depends on
+CreateUserService ..|> ICreateUserService: implements

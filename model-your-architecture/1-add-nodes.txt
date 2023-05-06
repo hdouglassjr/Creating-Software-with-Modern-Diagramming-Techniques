@@ -1,0 +1,19 @@
+flowchart TD
+   User["Premium Member
+   [Person]
+   
+   A user of the website who has
+   purchased a subscription"]
+   
+flowchart TD
+   User["Premium Member
+   [Person]
+   
+   A user of the website who has
+   purchased a subscription"]
+   
+   LS["Listings Service
+   [Software System]
+   
+   Serves web pages displaying title
+   listings to the end user"]

@@ -1,0 +1,7 @@
+alt first case
+    A->>B: first case
+else second case
+    A->>C: second case
+else third case
+    A->>D: third case
+end

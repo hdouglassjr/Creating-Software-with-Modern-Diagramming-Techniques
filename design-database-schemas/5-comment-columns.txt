@@ -1,0 +1,4 @@
+TITLE_GENRE {
+    int title_id PK "FK"
+    int genre_id PK "FK"
+}

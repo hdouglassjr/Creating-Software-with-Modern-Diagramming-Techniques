@@ -1,0 +1,23 @@
+---
+title: User Sign Up Flow
+---
+sequenceDiagram
+    actor Browser
+    participant Sign Up Service
+    participant User Service
+    participant Kafka
+    
+    Browser->>Sign Up Service: GET /sign_up
+    Sign Up Service-->>Browser: 200 OK (HTML page)
+    
+    Browser->>Sign Up Service: POST /sign_up
+    Sign Up Service->>Sign Up Service: Validate input
+
+    alt invalid input
+        Sign Up Service-->>Browser: Error
+    else valid input
+        Sign Up Service->>User Service: POST /users
+        User Service--)Kafka: User Created Event Published
+        User Service-->>Sign Up Service: 201 Created (User)
+        Sign Up Service-->>Browser: 301 Redirect (Login page)
+    end

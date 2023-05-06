@@ -1,0 +1,14 @@
+erDiagram
+    TITLE {
+        int title_id
+        int type_id
+        string name
+        datetime release_date
+    }
+
+    TITLE_TYPE {
+        int type_id
+        string type
+    }
+
+    TITLE }|--|| TITLE_TYPE: has

@@ -1,0 +1,6 @@
+erDiagram
+    TITLE {
+        int title_id
+        string name
+        datetime release_date
+    }
